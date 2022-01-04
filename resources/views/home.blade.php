@@ -4,6 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <img src="{{ url('image/Jam.png') }}" class="rounded mx-auto d-block" width="500" alt="">
+            <br>
             <div class="card">
                 <div class="card-header">Dashboard</div>
 

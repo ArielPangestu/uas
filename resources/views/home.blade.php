@@ -13,11 +13,7 @@
         <img class="d-block w-100" src="image/Jam.png" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
             <h5>We Sell Second Watch</h5>
-            <p>With Great Condtion</p>
-            <div class="slider-btn">
-                <button class="btn btn-1"> Lihat Produk</button>
-                <button class="btn btn-2">xxx</button>
-            </div>
+            <p>With Great Condition</p>
       </div>
       </div>
       <div class="carousel-item">

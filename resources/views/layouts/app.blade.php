@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                  <img src="{{ url('image/Logo.png') }}" width="80">
                  <strong>Trouble Watch Store</strong>
                 </a>
@@ -38,10 +38,18 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
+                    @guest
+                    @else
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/barang') }}">{{ __('Produk') }}</a>
+                        </li>
+                    </ul>
+                    @endguest
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+
+                            <li  style="list-style: none;" class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
@@ -50,7 +58,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown"  style="list-style: none;">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

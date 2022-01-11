@@ -64,14 +64,14 @@
         </style>
     </head>
     <body>
-        <div style="background-image: url('{{ asset('image/Background.jpg')}}') ;">
+        <div style=" width:100%; height:100%; background-image: url('{{ asset('image/Background.jpg')}}');">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}" >Home</a>
                     @else
-                        <a href="{{ route('login') }}" color=:black;>Login</a>
+                        <a href="{{ route('login') }}" color=:red;>Login</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>

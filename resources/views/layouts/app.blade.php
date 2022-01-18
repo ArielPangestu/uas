@@ -42,7 +42,7 @@
                     @else
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/barang') }}">{{ __('Produk') }}</a>
+                            <a class="nav-link" href="{{ url('/front/jam') }}">{{ __('Produk') }}</a>
                         </li>
                     </ul>
                     @endguest

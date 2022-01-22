@@ -12,8 +12,9 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="#">Add Product</a></li>
+                    <li><a href="{{route('admin.index')}}">Add Product</a></li>
                 </ul>
             </li>
         </ul>
-        </div>
+    </div>
+</div> <!-- ADMIN SIDE NAV-->

@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="{{route('home')}}">
                  <img src="{{ url('image/Logo.png') }}" width="80">
                  <strong>Trouble Watch Store</strong>
                 </a>

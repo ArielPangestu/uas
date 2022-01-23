@@ -3,9 +3,9 @@
 @section('content')
          <div class="row">
             @forelse($jam as $jams)
-            <div class="small-3 columns">
-                <div class="item-wrapper">
-                    <div class="img-wrapper">
+            <div class="col-6 col-sm-3">
+                <div class="item-wrapper col-md-auto text-center">
+                    <div class="img-wrapper ">
                         <a class="button expanded add-to-cart">
                             Add to Cart
                         </a>
@@ -19,7 +19,7 @@
                         </h3>
                     </a>
                     <h5>
-                        Rp{{ number_format($jams->harga)}}
+                        Rp.{{ number_format($jams->harga)}}
                     </h5>
                     <p>
                         {{$jams->deskripsi}}

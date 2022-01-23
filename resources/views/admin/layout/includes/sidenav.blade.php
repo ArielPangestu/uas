@@ -11,10 +11,21 @@
                     <span class="caret pull-right"></span>
                 </a>
                 <!-- Sub menu -->
-                <ul><li><a href="{{route('barang.index')}}">Product</a></li>
-                    <li><a href="{{route('barang.create')}}">Add Product</a></li>
+                <ul><li><a href="{{route('barang.index')}}">Produk</a></li>
+                    <li><a href="{{route('barang.create')}}">Tambah Barang</a></li>
                 </ul>
             </li>
+            <li class="submenu">
+                <a href="#">
+                    <i class="glyphicon glyphicon-list"></i> Category
+                    <span class="caret pull-right"></span>
+                </a>
+                <!-- Sub menu -->
+                <ul>
+                    <li><a href="{{route('category.index')}}">Add Category</a></li>
+                </ul>
+            </li>
+
         </ul>
     </div>
 </div> <!-- ADMIN SIDE NAV-->

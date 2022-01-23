@@ -7,12 +7,12 @@
 <ul>
     @forelse($barangs as $barang)
     <li>
-        <h4>Name of barang:{{$barang->name}}</h4>
+        <h4>Nama barang:{{$barang->name}}</h4>
     </li>
 
         @empty
 
-        <h3>No products</h3>
+        <h3>Tidak Ada barang</h3>
 
     @endforelse
 </ul>

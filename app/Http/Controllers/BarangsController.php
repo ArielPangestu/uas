@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Barang;
 use Illuminate\Http\Request;
 
 class BarangsController extends Controller
@@ -13,7 +15,8 @@ class BarangsController extends Controller
      */
     public function index()
     {
-        //
+        $barangs=Barang::all();
+        return view('admin.barang.index',compact('barangs'));
     }
 
     /**
@@ -23,7 +26,8 @@ class BarangsController extends Controller
      */
     public function create()
     {
-        return view('admin.barang.create');
+        $categories=Category::pluck('name','id');
+        return view('admin.barang.create',compact('categories'));
     }
 
     /**
@@ -35,6 +39,13 @@ class BarangsController extends Controller
     public function store(Request $request)
     {
         $formInput=$request->except('image');
+
+//        validasi
+        $this->validate($request,[
+            'name'=>'required',
+            'deskripsi'=>'required',
+            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+        ]);
 
 //        image upload
         $image=$request->image;

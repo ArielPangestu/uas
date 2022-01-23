@@ -5,7 +5,7 @@
     <h3>Tambah Barang</h3>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            {!! Form::open(['route' => 'barang.create', 'method' => 'POST', 'files' => true, 'data-parsley-validate'=>'']) !!}
+            {!! Form::open(['route' => 'barang.store', 'method' => 'POST', 'files' => true, 'data-parsley-validate'=>'']) !!}
 
             <div class="form-group">
                 {{ Form::label('name', 'Name') }}
@@ -15,6 +15,11 @@
             <div class="form-group">
                 {{ Form::label('deskripsi', 'Deskripsi') }}
                 {{ Form::text('deskripsi', null, array('class' => 'form-control')) }}
+            </div>
+
+            <div class="form-group">
+                {{ Form::label('category_id', 'Categories') }}
+                {{ Form::select('category_id', [1=>'Automatic'], null, ['class' => 'form-control','placeholder'=>'Tipe Jam']) }}
             </div>
 
             <div class="form-group">

@@ -8,13 +8,18 @@
             {!! Form::open(['route' => 'barang.store', 'method' => 'POST', 'files' => true, 'data-parsley-validate'=>'']) !!}
 
             <div class="form-group">
-                {{ Form::label('name', 'Name') }}
+                {{ Form::label('name', 'Nama') }}
                 {{ Form::text('name', null, array('class' => 'form-control','required'=>'','minlength'=>'5')) }}
             </div>
 
             <div class="form-group">
                 {{ Form::label('deskripsi', 'Deskripsi') }}
                 {{ Form::text('deskripsi', null, array('class' => 'form-control')) }}
+            </div>
+
+            <div class="form-group">
+                {{ Form::label('harga', 'Harga') }}
+                {{ Form::text('harga', null, array('class' => 'form-control')) }}
             </div>
 
             <div class="form-group">

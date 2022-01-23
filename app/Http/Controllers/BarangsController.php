@@ -44,6 +44,7 @@ class BarangsController extends Controller
         $this->validate($request,[
             'name'=>'required',
             'deskripsi'=>'required',
+            'harga'=>'required',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
         ]);
 

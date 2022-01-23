@@ -17,6 +17,7 @@ class CreateBarangsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('deskripsi');
+            $table->integer('harga');
             $table->string('image')->nullable();;
             $table->integer('category_id');
             $table->timestamps();

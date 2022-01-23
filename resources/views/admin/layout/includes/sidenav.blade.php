@@ -11,7 +11,7 @@
                     <span class="caret pull-right"></span>
                 </a>
                 <!-- Sub menu -->
-                <ul>
+                <ul><li><a href="{{route('barang.index')}}">Product</a></li>
                     <li><a href="{{route('barang.create')}}">Add Product</a></li>
                 </ul>
             </li>

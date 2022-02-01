@@ -2,7 +2,7 @@
 
 @section('content')
          <div class="row">
-            @forelse($jam as $jams)
+            @foreach($jam as $jams)
             <div class="col-6 col-sm-3">
                 <div class="item-wrapper col-md-auto text-center">
                     <div class="img-wrapper ">
@@ -11,7 +11,7 @@
                         </a>
                         <a href="#">
                             <img src="{{url('images',$jams->image)}}"/>
-                        </a>
+                </a>
                     </div>
                     <a href="{{route('lihat')}}">
                         <h3>
@@ -26,9 +26,7 @@
                     </p>
                 </div>
             </div>
-            @empty
-        <h3>No Product</h3>
-       @endforelse
+       @endforeach
 
         <compare></compare>
     </div>

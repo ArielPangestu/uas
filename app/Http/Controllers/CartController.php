@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\Barang;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Cart;
 
-class BarangsController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class BarangsController extends Controller
      */
     public function index()
     {
-        $barangs=Barang::all();
-        return view('admin.barang.index',compact('barangs'));
+        Cart::content();
+        return view('cart.index');
     }
 
     /**
@@ -24,10 +24,11 @@ class BarangsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($barangId)
     {
-        $categories=Category::pluck('name','id');
-        return view('admin.barang.create',compact('categories'));
+        $barang=Barang::find($barangId);
+
+        Cart::add($barangId,$barang->name,$barang->harga);
     }
 
     /**
@@ -38,26 +39,7 @@ class BarangsController extends Controller
      */
     public function store(Request $request)
     {
-        $formInput=$request->except('image');
-
-//        validasi
-        $this->validate($request,[
-            'name'=>'required',
-            'deskripsi'=>'required',
-            'harga'=>'required',
-            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
-        ]);
-
-//        image upload
-        $image=$request->image;
-        if($image){
-            $imageName=$image->getClientOriginalName();
-            $image->move('images',$imageName);
-            $formInput['image']=$imageName;
-        }
-
-        Barang::create($formInput);
-        return redirect()->route('barang.index');
+        //
     }
 
     /**
@@ -100,9 +82,8 @@ class BarangsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Barang $barang)
+    public function destroy($id)
     {
-        $barang->delete();
-        return redirect('index');
+        //
     }
 }

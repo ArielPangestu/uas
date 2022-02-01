@@ -15,6 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('dir/css/foundation.css')}}"/>
     <link rel="stylesheet" href="{{asset('dir/css/app.css')}}"/>
 
@@ -40,10 +42,50 @@
                     </ul>
                      <!-- Right Side Of Navbar -->
                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <i style="width: 10px" class="fas fa-shopping-cart fa-2x"></i>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ml-auto">
                          <li class="nav-item">
+
                              <a class="nav-link" href="{{ url('jam') }}">{{ __('Produk') }}</a>
                          </li>
                      </ul>
+                     <!-- Authentication Links -->
+                @guest
+                <li  style="list-style: none;" class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                    <li style="list-style: none;" class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown"  style="list-style: none;">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{Auth::user()->name}}
+                    <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+        </ul>
+    </div>
+</div>
+</nav>
+        </nav>
                 </div>
             </div>
         </nav>

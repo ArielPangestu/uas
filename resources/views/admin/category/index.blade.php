@@ -47,18 +47,18 @@
     <h3>Produk</h3>
 
     <table class="table table-hover">
-    	<thead>
-    		<tr>
-    			<th>Produk</th>
-    		</tr>
-    	</thead>
-    	<tbody>
+            <thead>
+                <tr>
+                    <th>Produk</th>
+                </tr>
+            </thead>
+            <tbody>
             @forelse($barangs as $barang)
                 <tr><td>{{$barang->name}}</td></tr>
                     @empty
-                    <tr><td>no data</td></tr>
+                    <tr><td>Tidak ada produk</td></tr>
                     @endforelse
-        </tbody>
+            </tbody>
     </table>
     @endif
 

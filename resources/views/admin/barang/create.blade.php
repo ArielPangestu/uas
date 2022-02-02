@@ -18,8 +18,8 @@
             </div>
 
             <div class="form-group">
-                {{ Form::label('harga', 'Harga') }}
-                {{ Form::text('harga', null, array('class' => 'form-control')) }}
+                {{ Form::label('price', 'Harga') }}
+                {{ Form::text('price', null, array('class' => 'form-control')) }}
             </div>
 
             <div class="form-group">

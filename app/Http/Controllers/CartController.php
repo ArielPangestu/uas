@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Barang;
 use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
@@ -15,8 +15,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        Cart::content();
-        return view('cart.index');
+        $cartItems=Cart::content();
+        return view('cart.index',compact('cartItems'));
     }
 
     /**
@@ -24,11 +24,9 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($barangId)
+    public function create()
     {
-        $barang=Barang::find($barangId);
 
-        Cart::add($barangId,$barang->name,$barang->harga);
     }
 
     /**
@@ -61,7 +59,10 @@ class CartController extends Controller
      */
     public function edit($id)
     {
-        //
+        $barangs=Barang::find($id);
+
+        Cart::add($id,$barangs->name,1,$barangs->price);
+        return back();
     }
 
     /**
@@ -84,6 +85,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::remove($id);
+        return back();
     }
 }

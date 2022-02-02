@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Troubel Watchq') }}</title>
+    <title>{{ config('app.name', 'Troubel Watch') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -43,13 +43,13 @@
                      <!-- Right Side Of Navbar -->
                      <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <i style="width: 10px" class="fas fa-shopping-cart fa-2x"></i>
+                            <a style="text-align: left" class="nav-link" href="{{ url('jam') }}">{{ __('Produk') }}</a>
                         </li>
-                    </ul>
-                     <ul class="navbar-nav ml-auto">
                          <li class="nav-item">
-
-                             <a class="nav-link" href="{{ url('jam') }}">{{ __('Produk') }}</a>
+                            <a href="{{route('cart.index')}}" class="fas fa-shopping-cart fa-2x btn btn-link"></a>
+                            <span class="badge badge-danger">
+                                {{Cart::count()}}
+                            </span>
                          </li>
                      </ul>
                      <!-- Authentication Links -->

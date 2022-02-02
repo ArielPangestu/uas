@@ -1,28 +1,29 @@
 @extends('layouts.main')
 
 @section('content')
+<div class="container">
          <div class="row">
-            @foreach($jam as $jams)
+            @foreach($jam as $jam)
             <div class="col-6 col-sm-3">
                 <div class="item-wrapper col-md-auto text-center">
                     <div class="img-wrapper ">
-                        <a class="button expanded add-to-cart">
+                        <a  href="{{route('cart.edit',$jam->id)}}" class="button expanded add-to-cart">
                             Add to Cart
                         </a>
-                        <a href="#">
-                            <img src="{{url('images',$jams->image)}}"/>
+                        <a href="">
+                            <img src="{{url('images',$jam->image)}}"/>
                 </a>
                     </div>
                     <a href="{{route('lihat')}}">
                         <h3>
-                            {{$jams->name}}
+                            {{$jam->name}}
                         </h3>
                     </a>
                     <h5>
-                        Rp.{{ number_format($jams->harga)}}
+                        Rp.{{number_format($jam->price)}}
                     </h5>
                     <p>
-                        {{$jams->deskripsi}}
+                        {{$jam->deskripsi}}
                     </p>
                 </div>
             </div>

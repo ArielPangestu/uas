@@ -44,7 +44,7 @@ class BarangsController extends Controller
         $this->validate($request,[
             'name'=>'required',
             'deskripsi'=>'required',
-            'harga'=>'required',
+            'price'=>'required',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
         ]);
 
@@ -103,6 +103,6 @@ class BarangsController extends Controller
     public function destroy(Barang $barang)
     {
         $barang->delete();
-        return redirect('index');
+        return back();
     }
 }

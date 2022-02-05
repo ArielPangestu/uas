@@ -18,7 +18,7 @@ Route::get('/lihat', 'FrontController@lihat')->name('lihat');
 
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@Logout');
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index');\
 Route::resource('/cart', 'CartController');
 
 Route::group(['prefix' => 'admin','middleware'=>'auth'], function(){

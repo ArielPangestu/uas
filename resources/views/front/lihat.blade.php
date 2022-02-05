@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('lihat')
 @section('content')
     <!-- products listing -->
     <div class="container">
@@ -8,7 +8,7 @@
             <div class="item-wrapper">
                 <div class="img-wrapper">
                     <a href="">
-                        <img src="{{asset(".../$barang->image")}}"" class="rounded mx-auto d-block" width="100%" alt="">
+                        <img src="{{asset("storage/$$barang->images")}}"/>
                     </a>
                 </div>
             </div>

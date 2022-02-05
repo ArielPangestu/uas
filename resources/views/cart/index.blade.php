@@ -9,7 +9,6 @@
         <tr>
                 <th>Nama</th>
                 <th>Harga</th>
-                <th>Jumlah</th>
         </tr>
     </thead>
     <tbody>
@@ -17,18 +16,20 @@
         <tr>
             <td>{{$cartItem->name}}</td>
             <td>{{$cartItem->price}}</td>
-            <td>{{$cartItem->qty}}</td>
             <td> <form action="{{route('cart.destroy',$cartItem->rowId)}}" method="POST">
                 {{ csrf_field() }}
                 {{method_field('DELETE')}}
-                <input class="btn btn-sm btn-danger" type="submit" value="Delete">
+                <button class="btn btn-sm btn-danger" type="submit" value="Delete"><i class="fas fa-trash-alt"></i></button>
                 </form>
             </td>
         </tr>
         @endforeach
         <tr>
             <td></td>
-            <td>Total Rp. {{Cart::subtotal()}}</td>
+            <td></td>
+            <td>Jumlah Barang :  {{Cart::count()}}
+                <br>Total Rp. {{Cart::subtotal()}}</td>
+
         </tr>
     </tbody>
 </table>

@@ -17,9 +17,8 @@ class FrontController extends Controller
         $jam=Barang::all();
         return view('front.jam',compact('jam'));
     }
-    public function lihat()
+    public function lihat(Barang $barang)
     {
-        $jam=Barang::all();
-        return view('front.lihat',compact('jam'));
+        return view('front.lihat',compact('barang'));
     }
 }

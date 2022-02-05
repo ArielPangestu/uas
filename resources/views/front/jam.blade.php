@@ -1,7 +1,17 @@
 @extends('layouts.main')
 
 @section('content')
+
 <div class="container">
+    <form action="" method="GET">
+    <div class="input-group">
+        <input class="form-control border-end-0 border rounded-pill" type="text" value="" id="example-search-input">
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+ </div>
          <div class="row">
             @foreach($jam as $jam)
             <div class="col-6 col-sm-3">
